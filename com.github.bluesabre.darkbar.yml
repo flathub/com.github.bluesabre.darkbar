@@ -4,14 +4,16 @@ runtime-version: '42'
 sdk: org.gnome.Sdk
 command: com.github.bluesabre.darkbar
 finish-args:
+# Reading .desktop and icon files needed to display application details
   - '--filesystem=host:ro'
-  - '--filesystem=xdg-config/autostart:create'
-  - '--filesystem=/var/lib/flatpak/app:ro'
   - '--filesystem=xdg-data/flatpak/app:ro'
+  - '--filesystem=/var/lib/flatpak/app:ro'
+# Creating an autostart file to launch in the background at startup
+  - '--filesystem=xdg-config/autostart:create'
+# Standard Permissions
   - '--share=ipc'
+# X11 is enforced to take advantage of libwnck for Xwayland windows
   - '--socket=x11'
-  - '--system-talk-name=org.freedesktop.Accounts'
-  - '--talk-name=org.gnome.SettingsDaemon'
 
 modules:
 
@@ -40,6 +42,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/bluesabre/darkbar.git
-        commit: "07f528c16e9e4c1e930e5fa9dfcdd26484568325"
-        #tag: 1.0.0
-        #commit: "919c0100da69de66a4cde077f3444b5387f20a66"
+        tag: 1.0.1
+        commit: "b1d2ac4d232848b125fe5a6f62e917a1c67542bf"
