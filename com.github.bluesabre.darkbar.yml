@@ -1,6 +1,6 @@
 app-id: com.github.bluesabre.darkbar
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 command: com.github.bluesabre.darkbar
 finish-args:
@@ -25,22 +25,22 @@ modules:
       - "/include"
       - "/lib/pkgconfig"
       - "/bin"
+      - "/share/gir-1.0"
+      - "/share/man"
     sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libwnck.git
-        tag: "3.36.0"
-        commit: "3c469a0d7e58e36106eea7600ae2f6fd8aaed232"
+      - type: archive
+        url: https://download.gnome.org/sources/libwnck/3.36/libwnck-3.36.0.tar.xz
+        sha256: "bc508150b3ed5d22354b0e6774ad4eee465381ebc0ace45eb0e2d3a4186c925f"
 
   - name: xprop
     sources:
       - type: archive
         url: https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.5.tar.gz
-        sha256: b7bf6b6be6cf23e7966a153fc84d5901c14f01ee952fbd9d930aa48e2385d670
+        sha256: "b7bf6b6be6cf23e7966a153fc84d5901c14f01ee952fbd9d930aa48e2385d670"
 
   - name: darkbar
     buildsystem: meson
     sources:
-      - type: git
-        url: https://github.com/bluesabre/darkbar.git
-        tag: 1.0.1
-        commit: "b1d2ac4d232848b125fe5a6f62e917a1c67542bf"
+      - type: archive
+        url: https://github.com/bluesabre/darkbar/archive/refs/tags/1.0.1.tar.gz
+        sha256: "4593e7e1ca9507bd44de93ae67a131b5b794beff632e178bf95bb9147c06c0d8"
