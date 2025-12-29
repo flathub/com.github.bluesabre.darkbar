@@ -6,8 +6,6 @@ command: com.github.bluesabre.darkbar
 finish-args:
 # Reading .desktop and icon files needed to display application details
   - '--filesystem=host:ro'
-# Creating an autostart file to launch in the background at startup
-  - '--filesystem=xdg-config/autostart:create'
 # Standard Permissions
   - '--share=ipc'
 # X11 is enforced to take advantage of libwnck for Xwayland windows
