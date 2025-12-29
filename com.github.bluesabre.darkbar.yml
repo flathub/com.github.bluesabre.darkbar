@@ -6,8 +6,6 @@ command: com.github.bluesabre.darkbar
 finish-args:
 # Reading .desktop and icon files needed to display application details
   - '--filesystem=host:ro'
-  - '--filesystem=xdg-data/flatpak/app:ro'
-  - '--filesystem=/var/lib/flatpak/app:ro'
 # Creating an autostart file to launch in the background at startup
   - '--filesystem=xdg-config/autostart:create'
 # Standard Permissions
