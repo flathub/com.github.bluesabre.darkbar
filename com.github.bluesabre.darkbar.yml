@@ -40,3 +40,8 @@ modules:
         url: https://github.com/bluesabre/darkbar.git
         tag: 1.0.1
         commit: "b1d2ac4d232848b125fe5a6f62e917a1c67542bf"
+    post-install:
+      # workaround for non-png-icon-in-hicolor-size-folder lint error
+      - mkdir -p /app/share/icons/hicolor/scalable/apps
+      - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
